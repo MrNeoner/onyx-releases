@@ -1,0 +1,59 @@
+# Публикация релиза APK: меняется release.json → APK скачивается по ссылке из sources,
+# проверяется (SHA-256, размер, подпись, versionCode) и выкладывается в GitHub Releases как onyx.apk.
+name: publish
+on:
+  push:
+    branches: [main]
+    paths: ['release.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Скачать и проверить APK
+        run: |
+          set -euo pipefail
+          j=release.json
+          sha=$(jq -r .sha256 $j); size=$(jq -r .size $j); cert=$(jq -r .cert $j); code=$(jq -r .versionCode $j)
+          fetch() {
+            curl -fsSL --retry 3 --max-time 300 -A "Mozilla/5.0" -o onyx.apk "$1" || return 1
+            if ! echo "$sha  onyx.apk" | sha256sum -c --status -; then
+              # временные файлообменники отдают страницу со ссылкой на сам файл
+              link=$(grep -a -o -E 'https://tmpfiles\.org/dl/[^"]+' onyx.apk | head -1 || true)
+              [ -n "$link" ] || return 1
+              curl -fsSL --retry 3 --max-time 300 -A "Mozilla/5.0" -o onyx.apk "$link" || return 1
+              echo "$sha  onyx.apk" | sha256sum -c --status - || return 1
+            fi
+          }
+          ok=
+          for url in $(jq -r '.sources[]' $j); do
+            if fetch "$url"; then ok=1; break; fi
+            echo "::warning::не подошёл источник $url"
+          done
+          [ -n "$ok" ] || { echo "::error::APK не скачался или SHA-256 не совпал"; exit 1; }
+          test "$(stat -c %s onyx.apk)" = "$size" || { echo "::error::размер не совпал"; exit 1; }
+          bt=$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -1)
+          "$bt/apksigner" verify --print-certs onyx.apk | tee signer.txt
+          grep -qi "certificate SHA-256 digest: $cert" signer.txt || { echo "::error::чужая подпись APK"; exit 1; }
+          "$bt/aapt2" dump badging onyx.apk | head -1 | tee badging.txt
+          grep -q "versionCode='$code'" badging.txt || { echo "::error::versionCode не совпал"; exit 1; }
+      - name: Опубликовать релиз
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          j=release.json
+          tag=$(jq -r .tag $j); ver=$(jq -r .version $j); code=$(jq -r .versionCode $j); sha=$(jq -r .sha256 $j)
+          { jq -r .notes $j; printf '\n<!-- onyx:{"versionCode":%s,"sha256":"%s"} -->\n' "$code" "$sha"; } > notes.md
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" onyx.apk --clobber
+            gh release edit "$tag" --title "onyx $ver" --notes-file notes.md --latest
+          else
+            gh release create "$tag" onyx.apk --title "onyx $ver" --notes-file notes.md --latest
+          fi
