@@ -1,12 +1,12 @@
 {
-  "tag": "v1.2.9",
-  "version": "1.2.9",
-  "versionCode": 12,
-  "sha256": "bcb0bcc2251529ddce956d1d681d9a6855e5d22fbbe2135bd58c317521e35a3c",
-  "size": 4256243,
+  "tag": "v1.2.10",
+  "version": "1.2.10",
+  "versionCode": 13,
+  "sha256": "2d2b5edfeb3e1708a9d5875088c0a036d1506751dc6dead9a6f68d0355fed117",
+  "size": 4260453,
   "cert": "b62a032b2f01157ac185f69af322912c41307d53e179d8b6f434c447f51253d5",
   "sources": [
-    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.9/onyx.apk"
+    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.10/onyx.apk"
   ],
-  "notes": "Что нового в onyx 1.2.9\n• В оценках можно посмотреть средний балл класса по предметам из отчёта «Сетевого города»."
+  "notes": "Что нового в onyx 1.2.10\n• Средний балл класса автоматически загружается в карточки предметов.\n• Исправлен разбор разных форматов отчёта и сокращённых названий предметов.\n• Добавлено обновление значений и понятные сообщения об отсутствии данных."
 }
