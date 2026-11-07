@@ -1,12 +1,12 @@
 {
-  "tag": "v1.2.5",
-  "version": "1.2.5",
-  "versionCode": 8,
-  "sha256": "d8ff3cc0360056dc855dc2d638e548fdb7878021c177cfb0874b61c2e76a3973",
-  "size": 4251719,
+  "tag": "v1.2.6",
+  "version": "1.2.6",
+  "versionCode": 9,
+  "sha256": "fe56fff08c799484a7aee2e45a068aac65d6aef173210281f97e11c1100e9e4a",
+  "size": 4253335,
   "cert": "b62a032b2f01157ac185f69af322912c41307d53e179d8b6f434c447f51253d5",
   "sources": [
-    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.5/onyx.apk"
+    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.6/onyx.apk"
   ],
-  "notes": "Что нового в onyx 1.2.5\n• Исправлено выравнивание выделенного урока в виджете.\n• Значок домашнего задания стал аккуратнее.\n• Убрана дополнительная задержка и статичный значок перед анимированной заставкой."
+  "notes": "Что нового в onyx 1.2.6\n• Исправлен показ текущей четверти на главной.\n• Просмотренные оценки больше не остаются новыми: обновляются значки и уведомления."
 }
