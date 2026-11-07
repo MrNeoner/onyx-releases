@@ -1,12 +1,12 @@
 {
-  "tag": "v1.2.7",
-  "version": "1.2.7",
-  "versionCode": 10,
-  "sha256": "0e4ad04db2508364bece7b54315371e174444ff732b9dcdbe91d30ff134e6967",
-  "size": 4253743,
+  "tag": "v1.2.8",
+  "version": "1.2.8",
+  "versionCode": 11,
+  "sha256": "4e0f990b724119d2343e0865b0dcfc9aacd8bfc1884d2e51f17e19fcdaa1e225",
+  "size": 4254443,
   "cert": "b62a032b2f01157ac185f69af322912c41307d53e179d8b6f434c447f51253d5",
   "sources": [
-    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.7/onyx.apk"
+    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.8/onyx.apk"
   ],
-  "notes": "Что нового в onyx 1.2.7\n• Исправлена обводка на тепловых картах и выравнивание оценки.\n• Обновления теперь открываются по центру экрана; кнопка проверки добавлена в верхнюю панель."
+  "notes": "Что нового в onyx 1.2.8\n• Новое окно проверки обновлений с анимированным котом и понятными сообщениями.\n• Улучшен вид на небольших экранах."
 }
