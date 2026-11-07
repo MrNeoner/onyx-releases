@@ -1,12 +1,12 @@
 {
-  "tag": "v1.2.8",
-  "version": "1.2.8",
-  "versionCode": 11,
-  "sha256": "4e0f990b724119d2343e0865b0dcfc9aacd8bfc1884d2e51f17e19fcdaa1e225",
-  "size": 4254443,
+  "tag": "v1.2.9",
+  "version": "1.2.9",
+  "versionCode": 12,
+  "sha256": "bcb0bcc2251529ddce956d1d681d9a6855e5d22fbbe2135bd58c317521e35a3c",
+  "size": 4256243,
   "cert": "b62a032b2f01157ac185f69af322912c41307d53e179d8b6f434c447f51253d5",
   "sources": [
-    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.8/onyx.apk"
+    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.9/onyx.apk"
   ],
-  "notes": "Что нового в onyx 1.2.8\n• Новое окно проверки обновлений с анимированным котом и понятными сообщениями.\n• Улучшен вид на небольших экранах."
+  "notes": "Что нового в onyx 1.2.9\n• В оценках можно посмотреть средний балл класса по предметам из отчёта «Сетевого города»."
 }
