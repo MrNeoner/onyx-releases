@@ -1,12 +1,12 @@
 {
-  "tag": "v1.2.6",
-  "version": "1.2.6",
-  "versionCode": 9,
-  "sha256": "fe56fff08c799484a7aee2e45a068aac65d6aef173210281f97e11c1100e9e4a",
-  "size": 4253335,
+  "tag": "v1.2.7",
+  "version": "1.2.7",
+  "versionCode": 10,
+  "sha256": "0e4ad04db2508364bece7b54315371e174444ff732b9dcdbe91d30ff134e6967",
+  "size": 4253743,
   "cert": "b62a032b2f01157ac185f69af322912c41307d53e179d8b6f434c447f51253d5",
   "sources": [
-    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.6/onyx.apk"
+    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.7/onyx.apk"
   ],
-  "notes": "Что нового в onyx 1.2.6\n• Исправлен показ текущей четверти на главной.\n• Просмотренные оценки больше не остаются новыми: обновляются значки и уведомления."
+  "notes": "Что нового в onyx 1.2.7\n• Исправлена обводка на тепловых картах и выравнивание оценки.\n• Обновления теперь открываются по центру экрана; кнопка проверки добавлена в верхнюю панель."
 }
