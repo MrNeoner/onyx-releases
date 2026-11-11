@@ -1,12 +1,12 @@
 {
-  "tag": "v1.2.12",
-  "version": "1.2.12",
+  "tag": "v1.2.13",
+  "version": "1.2.13",
   "versionCode": 15,
-  "sha256": "6928b535b1c3fb490b2963573e1bf661afcec9fd1c0391b79bbae14124e13e46",
-  "size": 4260885,
+  "sha256": "bbf29e574cb08180559e354f1223da68849790902bea6ebd3351622e90e66899",
+  "size": 4305634,
   "cert": "b62a032b2f01157ac185f69af322912c41307d53e179d8b6f434c447f51253d5",
   "sources": [
-    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.12/onyx.apk"
+    "https://github.com/MrNeoner/onyx-releases/releases/download/v1.2.13/onyx.apk"
   ],
   "notes": "Что нового в onyx 1.2.12\n• Оценки с весом стали компактнее: «5×10» без пустого места слева.\n• Вес оценки больше не наезжает на балл, кружок на шкале симулятора стоит ровно."
 }
